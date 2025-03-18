@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GST Calculator</title>
+    <style>
+        body {
+            text-align: center;
+            background-color:rgb(150, 222, 221);
+        }
+        .calculator {
+            width: 300px;
+            margin: 0 auto;
+            padding: 55px;
+            background-color: #e0fd6c;
+            border: 10px solid #b00d6f;
+            border-radius: 5px;
+        }
+        input[type="text"], input[type="button"] {
+            width: 250px;
+            height: 150px;
+            font-size: 30px;
+            margin: 10px;
+        }
+        input[type="text"] {
+            width: 450px;
+            font-size: 38px;
+        }
+    </style>
+    <script>
+        function calculateGST() {
+            var amount = parseFloat(document.getElementById("amount").value);
+            var gstRate = parseFloat(document.getElementById("gstRate").value);
+            var gstAmount = (amount * gstRate) / 100;
+            var totalAmount = amount + gstAmount;
+
+            document.getElementById("gstAmount").innerHTML = "GST Amount: ₹" + gstAmount.toFixed(2);
+            document.getElementById("totalAmount").innerHTML = "Total Amount: ₹" + totalAmount.toFixed(2);
+        }
+    </script>
+</head>
+<body>
+    <center>
+    <h1>GST Calculator</h1>
+    <p>Enter the amount and GST rate to calculate GST in Indian Rupees:</p>
+    <label for="amount">Amount (₹):</label>
+    <input type="number" id="amount">
+    <br>
+    <label for="gstRate">GST Rate (%):</label>
+    <input type="number" id="gstRate">
+    <br>
+    <button onclick="calculateGST()">Calculate GST</button>
+    <p id="gstAmount"></p>
+    <p id="totalAmount"></p>
+    </center>
+</body>
+</html>

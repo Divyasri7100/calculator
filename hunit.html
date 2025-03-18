@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Unit Conversion Calculator</title>
+    <style>
+        body {
+            text-align: center;
+            background-color:rgb(219, 178, 178);
+        }
+        .calculator {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #b0d51b;
+            border: 1px solid #b00d6f;
+            border-radius: 5px;
+        }
+        input[type="text"], input[type="button"] {
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            margin: 5px;
+        }
+        input[type="text"] {
+            width: 200px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <h2>UNIT CONVERSION CALCULATOR</h2>
+    <form>
+        <label for="inputValue">Enter a value:</label>
+        <input type="number" id="inputValue" placeholder="Enter value" required>
+        
+        <label for="fromUnit">From Unit:</label>
+        <select id="fromUnit">
+            <option value="feet">Feet</option>
+            <option value="meters">Meters</option>
+            <!-- Add more unit options here -->
+        </select>
+        
+        <label for="toUnit">To Unit:</label>
+        <select id="toUnit">
+            <option value="feet">Feet</option>
+            <option value="meters">Meters</option>
+            <!-- Add more unit options here -->
+        </select>
+        
+        <button type="button" onclick="convert()">Convert</button>
+    </form>
+    
+    <p>Result: <span id="result"></span></p>
+    
+    <script>
+        function convert() {
+            // Get input value and selected units
+            const inputValue = parseFloat(document.getElementById("inputValue").value);
+            const fromUnit = document.getElementById("fromUnit").value;
+            const toUnit = document.getElementById("toUnit").value;
+            
+            // Define conversion factors (you can add more)
+            const conversionFactors = {
+                feet: 3.28084,
+                meters: 1,
+                // Add more conversion factors here
+            };
+            
+            // Perform the conversion
+            const result = inputValue * conversionFactors[fromUnit] / conversionFactors[toUnit];
+            
+            // Display the result
+            document.getElementById("result").textContent = result;
+        }
+    </script>
+</body>
+</html>

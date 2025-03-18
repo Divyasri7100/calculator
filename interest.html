@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>INTEREST CALCULATOR</title>
+    <style>
+        body {
+            text-align: center;
+            background-color:rgb(145, 203, 219);
+        }
+        .calculator {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #b0d51b;
+            border: 1px solid #b00d6f;
+            border-radius: 5px;
+        }
+        input[type="text"], input[type="button"] {
+            width: 45px;
+            height: 50px;
+            font-size: 20px;
+            margin: 5px;
+        }
+        input[type="text"] {
+            width: 200px;
+            font-size: 24px;
+        }
+    </style>
+    <script>
+        function calculateSimpleInterest() {
+            // Get the principal amount, interest rate, and time period from the input fields
+            var principal = parseFloat(document.getElementById("principal").value);
+            var rate = parseFloat(document.getElementById("rate").value);
+            var time = parseFloat(document.getElementById("time").value);
+
+            // Calculate simple interest
+            var simpleInterest = (principal * rate * time) / 100;
+
+            // Display the result
+            document.getElementById("simple-interest-result").innerHTML = "Simple Interest: " + simpleInterest.toFixed(2);
+        }
+
+        function calculateCompoundInterest() {
+            // Get the principal amount, interest rate, time period, and compounding frequency from the input fields
+            var principal = parseFloat(document.getElementById("principal").value);
+            var rate = parseFloat(document.getElementById("rate").value);
+            var time = parseFloat(document.getElementById("time").value);
+            var n = parseFloat(document.getElementById("compounding-frequency").value);
+
+            // Calculate compound interest
+            var compoundInterest = principal * Math.pow(1 + (rate / (100 * n)), n * time) - principal;
+
+            // Display the result
+            document.getElementById("compound-interest-result").innerHTML = "Compound Interest: " + compoundInterest.toFixed(2);
+        }
+    </script>
+</head>
+<body>
+   <center>
+    <h1 style="font-family:calligrapher;">INTEREST CALCULATOR</h1>
+
+    <label for="principal">Principal Amount:</label>
+    <input type="number" id="principal"><br>
+
+    <label for="rate">Interest Rate (%):</label>
+    <input type="number" id="rate"><br>
+
+    <label for="time">Time Period (years):</label>
+    <input type="number" id="time"><br>
+
+    <label for="compounding-frequency">Compounding Frequency (per year):</label>
+    <input type="number" id="compounding-frequency"><br>
+
+    <button onclick="calculateSimpleInterest()">Calculate Simple Interest</button>
+    <button onclick="calculateCompoundInterest()">Calculate Compound Interest</button>
+
+    <div id="simple-interest-result"></div>
+    <div id="compound-interest-result"></div>
+   </center>
+</body>
+</html>
+
+
