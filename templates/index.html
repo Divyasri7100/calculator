@@ -2,7 +2,7 @@
 <html>
 <head>
 
-
+    
     <center>
     <h1 style="color:rgb(227, 221, 26);">SYNERGIC CALCULATOR</h1>
     <h2 style="color:rgb(197, 155, 155);">Makes Calculations Easy</h2>
@@ -14,9 +14,14 @@
     <style>
         /* Add some basic CSS styles for the menu bar */
         body{
-            background: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url(i1.jpg);
-            background-position: center;
-            background-size: cover;
+            margin: 0;
+            padding: 0;
+            background-image: url("static/i1.jpg"); /* Path inside static folder */
+            background-size: cover; /* Fill screen without distortion */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Don't tile */
+            background-attachment: fixed; /* Keeps background in place */
+            height: 100vh;
         }
         ul.menu {
             list-style-type: none;
@@ -48,13 +53,13 @@
     <!-- Create the menu bar -->
 
 <ul class="menu">
-    <li><a href="simplecal.html">Simple Calculator</a></li>
-    <li><a href="interest.html">Interest Calculator</a></li>
-    <li><a href="percentage.html">Percentage Calculator</a></li>
-    <li><a href="newemi.html">EMI Calculator</a></li>
-    <li><a href="eb.html">Electric Bill Calculator</a></li>
-    <li><a href="hunit.html">Unit Conversion Calculator</a></li>
-    <li><a href="hhgst.html">GST Calculator</a></li>
+    <li><a href="/simple">Simple Calculator</a></li>
+    <li><a href="/interest">Interest Calculator</a></li>
+    <li><a href="/percentage">Percentage Calculator</a></li>
+    <li><a href="/EMI">EMI Calculator</a></li>
+    <li><a href="/EB">Electric Bill Calculator</a></li>
+    <li><a href="/unit">Unit Conversion Calculator</a></li>
+    <li><a href="/GST">GST Calculator</a></li>
 </ul>
 
 <!-- Your content for each menu item would go here -->
